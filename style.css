@@ -1395,10 +1395,13 @@ section {
     }
 
     .testimonial-slide {
-        min-width: 100%;
+        flex: 0 0 auto;
+        width: 100%;
     }
 
     .testimonial-image {
+        width: 100%;
+        display: block;
         max-height: 400px;
         object-fit: contain;
     }
