@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:site-produto-n8n-bra-d92u.bolt.host)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
