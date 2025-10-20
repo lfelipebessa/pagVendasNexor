@@ -5,6 +5,20 @@
     box-sizing: border-box;
 }
 
+/* Prevent horizontal overflow on all elements */
+*,
+*::before,
+*::after {
+    max-width: 100%;
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
+    height: auto;
+}
+
 :root {
     --bg-primary: #000000;
     --bg-secondary: #0a0a0a;
@@ -20,6 +34,9 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
 }
 
 body {
@@ -32,6 +49,9 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: -0.01em;
+    width: 100%;
+    max-width: 100vw;
+    position: relative;
 }
 
 /* No global background effects */
@@ -147,6 +167,8 @@ body {
     padding: 0 2rem;
     position: relative;
     z-index: 1;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Hero Section - WITH BLACK HOLE + GRID BACKGROUND */
@@ -288,7 +310,7 @@ body {
     height: 40px;
     border-radius: 50%;
     border: 2px solid #000000;
-    margin-left: -12px;
+    margin-left: -18px;
     background: linear-gradient(135deg, #00d4ff, #0ea5e9);
     display: flex;
     align-items: center;
@@ -296,10 +318,18 @@ body {
     font-size: 1.2rem;
     font-weight: 600;
     color: #ffffff;
+    overflow: hidden;
 }
 
 .stat-avatar:first-child {
     margin-left: 0;
+}
+
+.stat-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .stat-info {
@@ -396,6 +426,9 @@ body {
 section {
     padding: 5rem 0;
     position: relative;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
 }
 
 .section-title {
@@ -1431,10 +1464,13 @@ section {
 
     /* Bonuses Section */
     .bonus-slide {
-        min-width: 100%;
+        flex: 0 0 auto;
+        width: 100%;
     }
 
     .bonus-image {
+        width: 100%;
+        display: block;
         max-height: 400px;
         object-fit: contain;
     }
@@ -1682,6 +1718,17 @@ section {
     .mouse {
         width: 25px;
         height: 40px;
+    }
+
+    /* Prevent zoom and horizontal scroll on mobile */
+    body,
+    html {
+        touch-action: manipulation;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    * {
+        -webkit-tap-highlight-color: transparent;
     }
 }
 
