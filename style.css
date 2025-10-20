@@ -5,13 +5,6 @@
     box-sizing: border-box;
 }
 
-/* Prevent horizontal overflow on all elements */
-*,
-*::before,
-*::after {
-    max-width: 100%;
-}
-
 img,
 video,
 iframe {
