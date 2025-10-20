@@ -1716,12 +1716,33 @@ section {
     /* Prevent zoom and horizontal scroll on mobile */
     body,
     html {
-        touch-action: manipulation;
+        touch-action: pan-y;
         -webkit-text-size-adjust: 100%;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
     }
 
     * {
         -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Fix scroll containment in pain section */
+    .pain-section,
+    .pain-wrapper,
+    .pain-content,
+    .pain-bottom,
+    .pain-image,
+    .pain-calculation {
+        overflow: visible !important;
+        height: auto !important;
+        max-height: none !important;
+        min-height: 0 !important;
+    }
+
+    /* Ensure all sections allow natural flow */
+    section {
+        overflow: visible !important;
+        height: auto !important;
     }
 }
 
