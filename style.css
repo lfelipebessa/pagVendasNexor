@@ -1147,6 +1147,20 @@ section {
     font-size: 0.9rem;
 }
 
+/* Desktop - Fix scroll behavior */
+@media (min-width: 769px) {
+    body, html {
+        overscroll-behavior-y: none;
+    }
+
+    .pain-section,
+    .pain-wrapper,
+    .pain-calculation {
+        overscroll-behavior: none;
+        overflow: visible;
+    }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     /* Container */
@@ -1757,6 +1771,8 @@ section {
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     padding: 5rem 0;
     position: relative;
+    overscroll-behavior: none;
+    overflow: visible;
 }
 
 .pain-section::before {
@@ -1831,6 +1847,8 @@ section {
     padding: 3rem 2rem;
     margin: 0 0 1.5rem 0;
     text-align: center;
+    overscroll-behavior: none;
+    overflow: visible;
 }
 
 .pain-calculation p {
